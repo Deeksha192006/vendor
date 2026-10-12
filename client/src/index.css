@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-red: #ED1C2E;
+  --brand-red-hover: #D91425;
+  --brand-red-light: #FEE8EA;
+  --brand-orange: #F7941D;
+  --brand-orange-hover: #E08012;
+  --brand-orange-light: #FEF4E8;
+  --brand-navy: #30358F;
+  --brand-navy-hover: #252972;
+  --brand-navy-light: #EAEBFA;
+  --brand-light: #F7F7F9;
+  --brand-dark: #222222;
+}
+
+@layer base {
+  html {
+    font-size: 16.5px;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-white text-slate-800 min-h-screen antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+.brand-btn-primary {
+  @apply bg-[#ED1C2E] hover:bg-[#D91425] text-white font-bold transition-all shadow-sm shadow-red-500/20 active:scale-95;
+}
+
+.brand-btn-secondary {
+  @apply bg-[#30358F] hover:bg-[#252972] text-white font-bold transition-all shadow-sm active:scale-95;
+}
+
+.brand-btn-outline {
+  @apply border-2 border-[#ED1C2E] text-[#ED1C2E] hover:bg-[#ED1C2E] hover:text-white font-bold transition-all;
+}
+
+.brand-badge-orange {
+  @apply bg-[#FEF4E8] text-[#E08012] border border-[#F7941D]/30 font-bold;
+}
+
+.brand-badge-navy {
+  @apply bg-[#EAEBFA] text-[#30358F] border border-[#30358F]/20 font-bold;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 20px -2px rgba(48, 53, 143, 0.05);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(240, 240, 245, 0.9);
+  box-shadow: 0 8px 24px -4px rgba(48, 53, 143, 0.06);
+}
+
+.brand-gradient-text {
+  background: linear-gradient(135deg, #ED1C2E 0%, #F7941D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navy-gradient-text {
+  background: linear-gradient(135deg, #30358F 0%, #1e2260 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Small Grid Box Pattern */
+.bg-grid-pattern {
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+}
+
+.bg-grid-pattern-dark {
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+.radial-fade-mask {
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, #000 60%, transparent 100%);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(-1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.08); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+
+
